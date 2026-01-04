@@ -5,6 +5,7 @@ import Quiz from './components/Quiz';
 import QuizResult from './components/QuizResult';
 import LandingPage from './components/LandingPage';
 import InitialOverlay from './components/InitialOverlay';
+import AnalyzingScreen from './components/AnalyzingScreen';
 
 const App: React.FC = () => {
   const [state, setState] = useState<AppState>('INITIAL');
@@ -20,6 +21,10 @@ const App: React.FC = () => {
   
   const handleQuizFinish = (answers: QuizAnswers) => {
     setQuizAnswers(answers);
+    setState('ANALYZING');
+  };
+
+  const handleAnalysisComplete = () => {
     setState('RESULT');
   };
 
@@ -39,6 +44,10 @@ const App: React.FC = () => {
             onSkip={handleSkipToSite} 
           />
         </div>
+      )}
+
+      {state === 'ANALYZING' && (
+        <AnalyzingScreen onComplete={handleAnalysisComplete} />
       )}
 
       {state === 'RESULT' && (

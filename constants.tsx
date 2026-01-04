@@ -5,9 +5,9 @@ export const EXPERT_DATA = {
   name: "Dra. Natymarinho",
   profession: "Estética | Botox | Harmonização",
   location: "Praia Grande, SP",
-  // Using the exact link provided by the user. 
-  // We remove the trailing empty '&text' to allow clean appending of our custom messages.
-  whatsapp: "https://api.whatsapp.com/send/?phone=13992087226&type=phone_number&app_absent=0&utm_source=ig",
+  // URL formatada corretamente para o Brasil (55) + DDD (13) + Número
+  // Mantendo o utm_source conforme solicitado mas garantindo que o número esteja completo.
+  whatsapp: "https://api.whatsapp.com/send?phone=5513992087226&utm_source=ig",
   instagram: "https://www.instagram.com/dra.natymarinho/",
   heroImage: "https://i.imgur.com/Uih2mqz.png",
   secondaryImage: "https://i.imgur.com/M0DjT4V.png",

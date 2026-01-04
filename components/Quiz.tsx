@@ -26,40 +26,52 @@ const Quiz: React.FC<Props> = ({ onFinish, onSkip }) => {
   const progress = ((currentStep + 1) / QUIZ_QUESTIONS.length) * 100;
 
   return (
-    <div className="fixed inset-0 z-[60] bg-white flex flex-col items-center overflow-hidden">
-      {/* Background Main Site Peek (Blurred) */}
-      <div className="absolute inset-0 opacity-10 pointer-events-none grayscale">
-        <img src={EXPERT_DATA.heroImage} className="w-full h-full object-cover" alt="" />
+    <div className="fixed inset-0 z-[60] bg-[#FCFAF7] flex flex-col items-center overflow-hidden">
+      {/* Moldura Flutuante Editorial da Dra. */}
+      <div className="absolute top-10 md:top-16 left-1/2 -translate-x-1/2 z-20 pointer-events-none">
+        <div className="relative group animate-float">
+          <div className="absolute -inset-2 border border-[#A68B6D]/20 rounded-full scale-110"></div>
+          <div className="w-24 h-24 md:w-28 md:h-28 rounded-full border border-[#A68B6D]/50 overflow-hidden shadow-2xl bg-white p-1">
+            <img 
+              src={EXPERT_DATA.heroImage} 
+              alt={EXPERT_DATA.name} 
+              className="w-full h-full object-cover rounded-full"
+            />
+          </div>
+          {/* Badge sutil de Especialista */}
+          <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 bg-[#1A1515] text-white text-[7px] font-bold uppercase tracking-[0.3em] px-3 py-1 rounded-full shadow-lg">
+            Sua Especialista
+          </div>
+        </div>
       </div>
 
-      <div className="w-full max-w-lg flex-1 flex flex-col p-6 z-10">
-        <header className="flex flex-col items-center mb-10 pt-4">
-          <span className="font-signature text-4xl text-[#D4AF37] mb-2">{EXPERT_DATA.name}</span>
-          <div className="w-full h-1 bg-gray-100 rounded-full mt-4">
+      <div className="w-full max-w-lg flex-1 flex flex-col p-8 z-10 pt-48 md:pt-56">
+        <header className="flex flex-col items-center mb-12">
+          <div className="w-full h-[1px] bg-[#1A1515]/5 mt-2 relative">
             <div 
-              className="h-full bg-[#D4AF37] rounded-full transition-all duration-500" 
+              className="absolute top-0 left-0 h-[2px] bg-[#A68B6D] transition-all duration-1000 ease-in-out" 
               style={{ width: `${progress}%` }}
             ></div>
           </div>
-          <p className="text-[10px] text-gray-400 mt-2 uppercase tracking-[0.2em] font-bold">
-            Passo {currentStep + 1} de {QUIZ_QUESTIONS.length}
+          <p className="text-[9px] text-[#1A1515]/30 mt-4 uppercase tracking-[0.5em] font-black">
+            Análise Personalizada • {currentStep + 1} / {QUIZ_QUESTIONS.length}
           </p>
         </header>
 
-        <div className="flex-1 flex flex-col justify-center animate-slide-up">
-          <h2 className="text-3xl md:text-4xl font-luxury text-center text-[#2D2D2D] mb-12">
+        <div className="flex-1 flex flex-col justify-start animate-fade-in">
+          <h2 className="text-3xl md:text-4xl font-luxury text-center text-[#1A1515] font-light mb-12 leading-tight">
             {QUIZ_QUESTIONS[currentStep].question}
           </h2>
 
-          <div className="space-y-4">
+          <div className="space-y-3">
             {QUIZ_QUESTIONS[currentStep].options.map((option, idx) => (
               <button
                 key={idx}
                 onClick={() => handleOptionSelect(option)}
-                className="w-full bg-white border-2 border-gray-100 hover:border-[#D4AF37] text-gray-700 font-medium py-5 px-6 rounded-2xl transition-all shadow-sm active:scale-[0.98] text-left relative group overflow-hidden"
+                className="w-full group bg-white border border-[#1A1515]/5 hover:border-[#A68B6D] text-[#1A1515] font-light py-5 px-10 rounded-full transition-all duration-500 shadow-sm hover:shadow-md active:scale-[0.99] text-center relative overflow-hidden"
               >
-                <span className="relative z-10">{option}</span>
-                <div className="absolute inset-0 bg-gray-50 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                <span className="text-xs tracking-[0.2em] uppercase opacity-70 group-hover:opacity-100 relative z-10">{option}</span>
+                <div className="absolute inset-0 bg-[#A68B6D]/5 translate-y-full group-hover:translate-y-0 transition-transform duration-500"></div>
               </button>
             ))}
           </div>
@@ -68,12 +80,22 @@ const Quiz: React.FC<Props> = ({ onFinish, onSkip }) => {
         <footer className="mt-auto py-8 text-center">
           <button 
             onClick={onSkip}
-            className="text-gray-400 text-sm font-medium underline underline-offset-4"
+            className="text-[#1A1515]/30 text-[9px] font-bold uppercase tracking-[0.4em] hover:text-[#1A1515] transition-colors border-b border-transparent hover:border-[#1A1515]/20 pb-1"
           >
-            Pular e ver o site
+            Pular Avaliação
           </button>
         </footer>
       </div>
+      
+      <style>{`
+        @keyframes float {
+          0%, 100% { transform: translateY(0); }
+          50% { transform: translateY(-10px); }
+        }
+        .animate-float {
+          animation: float 4s ease-in-out infinite;
+        }
+      `}</style>
     </div>
   );
 };

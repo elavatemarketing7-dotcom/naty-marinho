@@ -1,5 +1,5 @@
 
-export type AppState = 'INITIAL' | 'QUIZ' | 'RESULT' | 'SITE';
+export type AppState = 'INITIAL' | 'QUIZ' | 'ANALYZING' | 'RESULT' | 'SITE';
 
 export interface QuizQuestion {
   id: number;

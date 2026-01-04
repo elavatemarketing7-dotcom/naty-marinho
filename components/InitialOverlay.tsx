@@ -9,47 +9,42 @@ interface Props {
 
 const InitialOverlay: React.FC<Props> = ({ onStartQuiz, onSkip }) => {
   return (
-    <div className="fixed inset-0 z-50 flex flex-col items-center justify-center p-6 bg-white/95 backdrop-blur-md">
-      <div className="max-w-md w-full text-center space-y-8 animate-fade-in">
-        <div className="relative inline-block">
+    <div className="fixed inset-0 z-50 flex flex-col items-center justify-center p-8 bg-[#FCFAF7] backdrop-blur-md">
+      <div className="max-w-md w-full text-center space-y-12 animate-fade-in">
+        <div className="relative group">
+          <div className="absolute -inset-1 bg-[#A68B6D] rounded-full opacity-10 group-hover:opacity-20 transition-opacity blur-2xl"></div>
           <img 
             src={EXPERT_DATA.heroImage} 
             alt={EXPERT_DATA.name}
-            className="w-40 h-40 object-cover rounded-full border-4 border-[#D4AF37] mx-auto shadow-2xl"
+            className="w-44 h-44 object-cover rounded-full mx-auto grayscale-[0.2] hover:grayscale-0 transition-all duration-700 shadow-[0_20px_50px_rgba(166,139,109,0.15)] relative z-10"
           />
-          <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 bg-[#D4AF37] text-white px-4 py-1 rounded-full text-xs font-bold whitespace-nowrap uppercase tracking-widest">
-            Especialista
-          </div>
         </div>
 
-        <div className="space-y-4">
-          <h1 className="text-4xl md:text-5xl font-luxury font-medium text-[#2D2D2D]">
-            Sua jornada para a <br/>
-            <span className="italic text-[#D4AF37]">autoestima</span> começa aqui.
+        <div className="space-y-6">
+          <h1 className="text-4xl md:text-5xl font-luxury font-light text-[#1A1515] tracking-tight leading-tight">
+            Descubra a sua <br/>
+            <span className="italic font-normal border-b border-[#A68B6D]/30 pb-1">beleza autêntica.</span>
           </h1>
-          <p className="text-gray-600 text-lg leading-relaxed">
-            Olá, sou a <span className="font-semibold">{EXPERT_DATA.name}</span>. Para te oferecer uma experiência personalizada, gostaria de te conhecer melhor.
+          <p className="text-[#3D3030] text-lg font-light tracking-wide">
+            Dra. Naty Marinho <br/>
+            <span className="text-[10px] uppercase tracking-[0.4em] font-bold opacity-40">Estética Avançada de Luxo</span>
           </p>
         </div>
 
-        <div className="flex flex-col gap-4">
+        <div className="flex flex-col gap-5 pt-4">
           <button
             onClick={onStartQuiz}
-            className="w-full bg-[#D4AF37] hover:bg-[#C5A028] text-white font-bold py-5 rounded-2xl shadow-xl transition-all active:scale-95 text-lg uppercase tracking-wider"
+            className="w-full bg-[#1A1515] hover:bg-[#A68B6D] text-white font-medium py-5 rounded-full shadow-lg transition-all duration-500 active:scale-[0.98] text-sm uppercase tracking-[0.3em]"
           >
-            Fazer Avaliação Grátis
+            Iniciar Avaliação
           </button>
           <button
             onClick={onSkip}
-            className="w-full bg-transparent hover:bg-gray-50 text-[#D4AF37] font-semibold py-4 rounded-2xl border-2 border-[#D4AF37]/30 transition-all active:scale-95 text-base"
+            className="w-full text-[#1A1515] font-light py-4 text-xs uppercase tracking-[0.4em] border-b border-[#1A1515]/10 hover:border-[#1A1515] transition-all"
           >
-            Ver site direto
+            Apenas visitar o site
           </button>
         </div>
-        
-        <p className="text-xs text-gray-400 font-medium italic">
-          * Leva menos de 1 minuto.
-        </p>
       </div>
     </div>
   );
