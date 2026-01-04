@@ -3,17 +3,31 @@
 <html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dra. Natymarinho | Estética Premium</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Dra. Naty Marinho | Estética Avançada & Harmonização</title>
+    
+    <!-- SEO Premium -->
+    <meta name="description" content="Especialista em realçar sua beleza natural com sofisticação e segurança. Agende sua avaliação personalizada com a Dra. Naty Marinho." />
+    <meta name="keywords" content="estética avançada, botox, harmonização facial, preenchimento labial, Dra Naty Marinho, Praia Grande" />
+    <meta name="author" content="Dra. Naty Marinho" />
+    
+    <!-- Open Graph (Redes Sociais) -->
+    <meta property="og:title" content="Dra. Naty Marinho | Estética de Luxo" />
+    <meta property="og:description" content="O luxo de ser você. Realce sua beleza com naturalidade e protocolos exclusivos." />
+    <meta property="og:image" content="https://i.imgur.com/Uih2mqz.png" />
+    <meta property="og:type" content="website" />
+    
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Montserrat:wght@200;300;400;500;600;700&family=Great+Vibes&display=swap" rel="stylesheet">
+    
     <style>
       body {
         font-family: 'Montserrat', sans-serif;
         color: #1A1515;
         background-color: #FCFAF7;
+        -webkit-font-smoothing: antialiased;
       }
       h1, h2, h3, .font-luxury {
         font-family: 'Cormorant Garamond', serif;
@@ -41,18 +55,27 @@
       ::-webkit-scrollbar-thumb:hover {
         background: #1A1515;
       }
+      /* Prevenir scroll lateral */
+      html, body {
+        overflow-x: hidden;
+        position: relative;
+        width: 100%;
+      }
     </style>
-  <script type="importmap">
-{
-  "imports": {
-    "react": "https://esm.sh/react@^19.2.3",
-    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
-    "react/": "https://esm.sh/react@^19.2.3/"
-  }
-}
-</script>
-</head>
-  <body class="bg-[#FCFAF7] text-[#1A1515] overflow-x-hidden selection:bg-[#A68B6D] selection:text-white">
+
+    <script type="importmap">
+    {
+      "imports": {
+        "react": "https://esm.sh/react@^19.2.3",
+        "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+        "react/": "https://esm.sh/react@^19.2.3/"
+      }
+    }
+    </script>
+  </head>
+  <body class="bg-[#FCFAF7] text-[#1A1515] selection:bg-[#A68B6D] selection:text-white">
     <div id="root"></div>
+    <!-- Ponto de entrada crucial para o funcionamento do app -->
+    <script type="module" src="./index.tsx"></script>
   </body>
 </html>
