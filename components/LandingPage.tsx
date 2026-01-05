@@ -42,7 +42,7 @@ const LandingPage: React.FC = () => {
         <div className="relative z-10 w-full max-w-7xl mx-auto px-6 md:px-12 lg:px-24 flex flex-col justify-end md:justify-center items-start pt-24 pb-10 md:py-0">
           <div className="max-w-2xl">
             <h1 className="text-5xl md:text-7xl lg:text-8xl font-luxury text-[#1A1515] leading-[0.9] mb-6 md:mb-8 font-extralight tracking-tighter">
-              <span className="font-signature text-4xl md:text-6xl text-[#A68B6D] block mb-1 lowercase">Dra.</span>
+              <span className="font-signature text-4xl md:text-6xl text-[#1A1515] block mb-1 lowercase">Dra.</span>
               Naty Marinho
             </h1>
             <p className="text-lg md:text-xl lg:text-2xl text-[#1A1515] font-extralight max-w-md mb-8 md:mb-10 leading-relaxed tracking-tight opacity-90">
