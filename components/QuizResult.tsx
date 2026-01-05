@@ -60,7 +60,7 @@ const QuizResult: React.FC<Props> = ({ answers, onContinue }) => {
           
           <button
             onClick={onContinue}
-            className="w-full bg-transparent text-[#1A1515] font-light py-3 text-[8px] uppercase tracking-[0.5em] border-b border-[#1A1515]/5 hover:border-[#1A1515]/20 transition-all"
+            className="w-full bg-transparent text-[#1A1515] font-bold py-3 text-[11px] md:text-[10px] uppercase tracking-[0.4em] border-b-2 border-[#1A1515]/20 hover:border-[#1A1515] transition-all"
           >
             Acessar o Portfólio
           </button>

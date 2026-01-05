@@ -81,7 +81,7 @@ const Quiz: React.FC<Props> = ({ onFinish, onSkip }) => {
         <footer className="mt-auto py-6 md:py-8 text-center">
           <button 
             onClick={onSkip}
-            className="text-[#1A1515]/50 text-[8px] md:text-[9px] font-bold uppercase tracking-[0.4em] hover:text-[#1A1515] transition-colors border-b border-[#1A1515]/20 hover:border-[#1A1515] pb-1"
+            className="text-[#1A1515]/80 text-[10px] md:text-[11px] font-bold uppercase tracking-[0.4em] hover:text-[#1A1515] transition-colors border-b-2 border-[#1A1515]/10 hover:border-[#1A1515] pb-1"
           >
             Pular Avaliação
           </button>

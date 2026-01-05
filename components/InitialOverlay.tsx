@@ -40,7 +40,7 @@ const InitialOverlay: React.FC<Props> = ({ onStartQuiz, onSkip }) => {
           </button>
           <button
             onClick={onSkip}
-            className="w-full text-[#1A1515] font-light py-4 text-xs md:text-[10px] uppercase tracking-[0.4em] border-b border-[#1A1515]/10 hover:border-[#1A1515] transition-all"
+            className="w-full text-[#1A1515] font-bold py-4 text-xs md:text-[11px] uppercase tracking-[0.3em] border-b-2 border-[#1A1515]/10 hover:border-[#1A1515] transition-all"
           >
             Apenas visitar o site
           </button>
